@@ -1,4 +1,6 @@
 ﻿using System;
+using TDDMicroExercises.TirePressureMonitoringSystem.Interfaces;
+
 namespace TDDMicroExercises.TirePressureMonitoringSystem.SomeDependencies
 {
     public class AnAlarmClient2
@@ -6,9 +8,8 @@ namespace TDDMicroExercises.TirePressureMonitoringSystem.SomeDependencies
 		// A class with the only goal of simulating a dependency on Alert
 		// that has impact on the refactoring.
 		
-        private void DoSomething()
+        private void DoSomething(IAlarm anAlarm)
         {
-            Alarm anAlarm = new Alarm();
             anAlarm.Check();
             bool isAlarmOn = anAlarm.AlarmOn;
         }

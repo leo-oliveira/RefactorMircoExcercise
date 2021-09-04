@@ -1,17 +1,20 @@
 using System;
+using TDDMicroExercises.TelemetrySystem.Interfaces;
 
 namespace TDDMicroExercises.TelemetrySystem
 {
-	public class TelemetryClient
+	public class TelemetryClient : ITelemetryClient
 	{
-        //
-        // The communication with the server is simulated in this implementation.
-        // Because the focus of the exercise is on the other class.
-        //
+		//
+		// The communication with the server is simulated in this implementation.
+		// Because the focus of the exercise is on the other class.
+		//
 
-		public const string DiagnosticMessage = "AT#UD";
+		private string _diagnosticMessage = "AT#UD";
 
-		private bool _onlineStatus;
+        public string DiagnosticMessage { get { return _diagnosticMessage; } }
+
+        private bool _onlineStatus;
 		private bool _diagnosticMessageJustSent = false;
 
         private readonly Random _connectionEventsSimulator = new Random();

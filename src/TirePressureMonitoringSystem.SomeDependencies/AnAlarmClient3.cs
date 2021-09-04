@@ -1,4 +1,6 @@
 ﻿using System;
+using TDDMicroExercises.TirePressureMonitoringSystem.Interfaces;
+
 namespace TDDMicroExercises.TirePressureMonitoringSystem.SomeDependencies
 {
     public class AnAlarmClient3
@@ -6,11 +8,11 @@ namespace TDDMicroExercises.TirePressureMonitoringSystem.SomeDependencies
         // A class with the only goal of simulating a dependency on Alert
         // that has impact on the refactoring.
 
-        private Alarm _anAlarm;
+        private IAlarm _anAlarm;
 
-        public AnAlarmClient3()
+        public AnAlarmClient3(IAlarm anAlarm)
         {
-            _anAlarm = new Alarm();
+            _anAlarm = anAlarm;
         }
 
         public void DoSomething() 

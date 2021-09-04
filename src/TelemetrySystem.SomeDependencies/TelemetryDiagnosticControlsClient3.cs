@@ -1,4 +1,6 @@
 ﻿using System;
+using TDDMicroExercises.TelemetrySystem.Interfaces;
+
 namespace TDDMicroExercises.TelemetrySystem.SomeDependencies
 {
     public class TelemetryDiagnosticControlsClient3
@@ -6,10 +8,8 @@ namespace TDDMicroExercises.TelemetrySystem.SomeDependencies
 		// A class with the only goal of simulating a dependency on TelemetryDiagnosticControls
 		// that has impact on the refactoring.
 
-		public TelemetryDiagnosticControlsClient3()
+		public TelemetryDiagnosticControlsClient3(ITelemetryDiagnosticControls teleDiagnostic)
 		{
-			var teleDiagnostic = new TelemetryDiagnosticControls();
-
 			teleDiagnostic.CheckTransmission();
 
 			var result = teleDiagnostic.DiagnosticInfo;

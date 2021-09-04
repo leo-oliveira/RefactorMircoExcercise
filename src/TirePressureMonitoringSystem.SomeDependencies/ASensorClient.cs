@@ -1,4 +1,6 @@
 ﻿using System;
+using TDDMicroExercises.TirePressureMonitoringSystem.Interfaces;
+
 namespace TDDMicroExercises.TirePressureMonitoringSystem.SomeDependencies
 {
     public class ASensorClient      
@@ -6,10 +8,8 @@ namespace TDDMicroExercises.TirePressureMonitoringSystem.SomeDependencies
         // A class with the only goal of simulating a dependency on Sensor
         // that has impact on the refactoring.
 
-        public ASensorClient()
+        public ASensorClient(ISensor sensor)
         {
-            Sensor sensor = new Sensor();
-
 			double value = sensor.PopNextPressurePsiValue();
 			value = sensor.PopNextPressurePsiValue();
 			value = sensor.PopNextPressurePsiValue();
